@@ -317,25 +317,25 @@ const TERRAFORM_ACTIONS: Array[Dictionary] = [
 
 ## Villager and corporate quest templates. Runtime status is tracked outside this catalog.
 const VILLAGER_QUESTS: Array[Dictionary] = [
-	{"id": "build_shop", "character_id": "mining_worker", "title": "A Place to Rest", "description": "A worker asks for a small shop near the mining area.", "objective": "Build 1 Small Shop", "deadline_weeks": 3, "reward": "5 Kristals and +5 morale", "objective_type": "build", "target": "small_shop", "amount": 1},
-	{"id": "hungry_stoves", "character_id": "shop_owner", "title": "Cold Stoves", "description": "A shop owner is running out of hydrogen and can't keep the stoves lit.", "objective": "Deliver 5 Hydrogen to the Small Shop", "deadline_weeks": 2, "reward": "Shop output +5 and +5 morale", "objective_type": "deliver", "target": "hydrogen", "amount": 5},
-	{"id": "missing_copper", "character_id": "dockworker", "title": "The Missing Shipment", "description": "A dockworker swears a copper shipment never reached storage. Everyone's story is slightly different.", "objective": "Talk to 3 citizens and name the culprit", "deadline_weeks": 3, "reward": "10 Copper and a new ally", "objective_type": "investigate", "target": "missing_copper"},
-	{"id": "garden_dreams", "character_id": "botanist", "title": "Garden Dreams", "description": "A retired botanist wants a place where something green can grow.", "objective": "Build 1 Garden", "deadline_weeks": 5, "reward": "+10 morale and a discount on biomass tiles", "objective_type": "build", "target": "garden", "amount": 1},
-	{"id": "breathing_tax", "character_id": "settlement_leader", "title": "The Breathing Tax", "description": "Squatters on the outskirts are drowning in oxygen costs, and their leader asks for help.", "objective": "Build 1 Small Oxygen Pump in the outskirts", "deadline_weeks": 4, "reward": "+20 morale and settlement loyalty", "objective_type": "build", "target": "small_oxygen_pump", "location": "outskirts", "amount": 1},
+	{"id": "build_shop", "character_id": "mining_worker", "title": "A Place to Rest", "description": "A worker asks for a small shop near the mining area.", "objective": "Build 1 Small Shop", "deadline_weeks": 3, "reward": "5 Kristals and +5 morale", "objective_type": "build", "target": "small_shop", "amount": 1, "reward_effects": {"kristals": 5, "morale": 5}},
+	{"id": "hungry_stoves", "character_id": "shop_owner", "title": "Cold Stoves", "description": "A shop owner is running out of hydrogen and can't keep the stoves lit.", "objective": "Deliver 5 Hydrogen to the Small Shop", "deadline_weeks": 2, "reward": "Shop output +5 and +5 morale", "objective_type": "deliver", "target": "hydrogen", "amount": 5, "reward_effects": {"morale": 5}},
+	{"id": "missing_copper", "character_id": "dockworker", "title": "The Missing Shipment", "description": "A dockworker swears a copper shipment never reached storage. Everyone's story is slightly different.", "objective": "Talk to 3 citizens and name the culprit", "deadline_weeks": 3, "reward": "10 Copper and a new ally", "objective_type": "investigate", "target": "missing_copper", "reward_effects": {"copper": 10}},
+	{"id": "garden_dreams", "character_id": "botanist", "title": "Garden Dreams", "description": "A retired botanist wants a place where something green can grow.", "objective": "Build 1 Garden", "deadline_weeks": 5, "reward": "+10 morale and a discount on biomass tiles", "objective_type": "build", "target": "garden", "amount": 1, "reward_effects": {"morale": 10}},
+	{"id": "breathing_tax", "character_id": "settlement_leader", "title": "The Breathing Tax", "description": "Squatters on the outskirts are drowning in oxygen costs, and their leader asks for help.", "objective": "Build 1 Small Oxygen Pump in the outskirts", "deadline_weeks": 4, "reward": "+20 morale and settlement loyalty", "objective_type": "build", "target": "small_oxygen_pump", "location": "outskirts", "amount": 1, "reward_effects": {"morale": 20}},
 	{"id": "dust_storm_prep", "character_id": "weather_officer", "title": "Storm on the Horizon", "description": "The weather officer warns a dust storm will hit soon and the harvesters are exposed.", "objective": "Stockpile 15 Oxygen and reinforce 3 buildings", "deadline_weeks": 2, "reward": "No storm damage", "objective_type": "compound"},
-	{"id": "mine_collapse", "character_id": "mine_foreman", "title": "Trapped Below", "description": "A tunnel has collapsed with miners still inside, and the foreman is begging for rescue gear.", "objective": "Spend 5 Aluminum and 3 Copper on rescue equipment", "deadline_weeks": 1, "reward": "Miners saved, +10 morale, and workforce loyalty", "objective_type": "spend_resources"},
-	{"id": "oxygen_leak", "character_id": "safety_engineer", "title": "Something's Hissing", "description": "The safety engineer detects an oxygen leak but can't tell which of three buildings it's coming from.", "objective": "Question the engineer and 2 residents, then seal the correct building", "deadline_weeks": 2, "reward": "Oxygen loss stopped and 5 Kristals", "objective_type": "investigate_and_repair"},
-	{"id": "rebellion_brewing", "character_id": "concerned_resident", "title": "Whispers in the Dark", "description": "A rebel sympathizer warns that a protest is being planned and morale is low.", "objective": "Raise morale above 60 or negotiate with the protest leaders", "deadline_weeks": 3, "reward": "Protest cancelled and +15 morale", "objective_type": "choice"},
+	{"id": "mine_collapse", "character_id": "mine_foreman", "title": "Trapped Below", "description": "A tunnel has collapsed with miners still inside, and the foreman is begging for rescue gear.", "objective": "Spend 5 Aluminum and 3 Copper on rescue equipment", "deadline_weeks": 1, "reward": "Miners saved, +10 morale, and workforce loyalty", "objective_type": "spend_resources", "inputs": {"aluminum": 5, "copper": 3}, "reward_effects": {"morale": 10}},
+	{"id": "oxygen_leak", "character_id": "safety_engineer", "title": "Something's Hissing", "description": "The safety engineer detects an oxygen leak but can't tell which of three buildings it's coming from.", "objective": "Question the engineer and 2 residents, then seal the correct building", "deadline_weeks": 2, "reward": "Oxygen loss stopped and 5 Kristals", "objective_type": "investigate_and_repair", "reward_effects": {"kristals": 5}},
+	{"id": "rebellion_brewing", "character_id": "concerned_resident", "title": "Whispers in the Dark", "description": "A rebel sympathizer warns that a protest is being planned and morale is low.", "objective": "Raise morale above 60 or negotiate with the protest leaders", "deadline_weeks": 3, "reward": "Protest cancelled and +15 morale", "objective_type": "choice", "reward_effects": {"morale": 15}},
 	{"id": "new_deposit", "character_id": "surveyor", "title": "Strike It Rich", "description": "Surveyors found a Risium deposit, but a rival mining crew is already eyeing it.", "objective": "Build 1 Risium Harvester at the deposit", "deadline_weeks": 2, "reward": "+5 Risium per week", "objective_type": "build", "target": "risium_harvester", "amount": 1},
-	{"id": "landlord_offer", "character_id": "blackstone_rep", "title": "The Landlord's Offer", "description": "Blackstone will fund a Skyscraper if you let them raise rents. The settlements won't like it.", "objective": "Build 1 Skyscraper", "deadline_weeks": 6, "reward": "50 Kristals and +100 output, but -20 morale in the settlements", "objective_type": "choice_and_build", "target": "skyscraper", "amount": 1},
+	{"id": "landlord_offer", "character_id": "blackstone_rep", "title": "The Landlord's Offer", "description": "Blackstone will fund a Skyscraper if you let them raise rents. The settlements won't like it.", "objective": "Build 1 Skyscraper", "deadline_weeks": 6, "reward": "50 Kristals and +100 output, but -20 morale in the settlements", "objective_type": "choice_and_build", "target": "skyscraper", "amount": 1, "reward_effects": {"kristals": 50, "morale": -20}},
 	{"id": "underground_trade", "character_id": "smuggler", "title": "No Questions Asked", "description": "A smuggler offers cheap oxygen cylinders to the squatters. It's illegal, but it works.", "objective": "Decide to allow, shut down, or tax the smuggling operation", "deadline_weeks": 2, "reward": "Depends on your choice: +10 morale, +10 citizen trust, or 20 Kristals", "objective_type": "choice"},
 	{"id": "spaceport_gamble", "character_id": "pilot", "title": "Into the Void", "description": "A pilot proposes an expedition for rare materials. It could pay off big or lose everything.", "objective": "Fund 1 Spaceport expedition with 10 Aluminum and 10 Hydrogen", "deadline_weeks": 4, "reward": "1 rare tech component", "objective_type": "expedition", "target": "spaceport", "inputs": {"aluminum": 10, "hydrogen": 10}},
 	{"id": "bank_loan", "character_id": "banker", "title": "Borrowed Time", "description": "The banker offers fast cash at a high interest rate, due in 8 weeks.", "objective": "Accept the loan and repay it in full", "deadline_weeks": 8, "reward": "40 Kristals upfront to build faster", "objective_type": "loan"},
-	{"id": "shift_burnout", "character_id": "shift_supervisor", "title": "Running on Empty", "description": "The shift supervisor says the workers are exhausted and a strike is likely.", "objective": "Build 1 Medium Shop or choose shorter shifts", "deadline_weeks": 3, "reward": "+15 morale and +10 output for 4 weeks", "objective_type": "choice"},
+	{"id": "shift_burnout", "character_id": "shift_supervisor", "title": "Running on Empty", "description": "The shift supervisor says the workers are exhausted and a strike is likely.", "objective": "Build 1 Medium Shop or choose shorter shifts", "deadline_weeks": 3, "reward": "+15 morale and +10 output for 4 weeks", "objective_type": "choice", "reward_effects": {"morale": 15}},
 	{"id": "bigger_kitchen", "character_id": "baker", "title": "A Bigger Kitchen", "description": "A baker wants to expand into a larger shop but can't afford the aluminum.", "objective": "Choose to give a loan, build it yourself as a partner, or decline", "deadline_weeks": 4, "reward": "Loan: interest income. Partnership: you build the shop and take 20% of its output. Decline: nothing.", "objective_type": "choice"},
-	{"id": "water_rations", "character_id": "resident", "title": "Dry Taps", "description": "Residents report that the water supply is running thin and tempers are rising.", "objective": "Place 2 water tiles using Oxygen and Hydrogen", "deadline_weeks": 3, "reward": "+10 morale and 5 Kristals from grateful shopkeepers", "objective_type": "terraform", "target": "place_water_tile", "amount": 2},
-	{"id": "miners_union", "character_id": "miner_rep", "title": "Safety First", "description": "The miners want a union and better safety gear after too many close calls.", "objective": "Recognize the union or spend 10 Iron and 5 Aluminum on gear upgrades", "deadline_weeks": 4, "reward": "+15 morale and fewer accidents for 6 weeks", "objective_type": "choice"},
-	{"id": "festival_day", "character_id": "shop_owner", "title": "A Reason to Celebrate", "description": "Shop owners want to throw a colony-wide festival to lift everyone's spirits.", "objective": "Spend 10 Kristals and 5 Hydrogen on a festival", "deadline_weeks": 2, "reward": "+20 morale for 3 weeks", "objective_type": "spend_resources", "inputs": {"kristals": 10, "hydrogen": 5}}
+	{"id": "water_rations", "character_id": "resident", "title": "Dry Taps", "description": "Residents report that the water supply is running thin and tempers are rising.", "objective": "Place 2 water tiles using Oxygen and Hydrogen", "deadline_weeks": 3, "reward": "+10 morale and 5 Kristals from grateful shopkeepers", "objective_type": "terraform", "target": "place_water_tile", "amount": 2, "reward_effects": {"morale": 10, "kristals": 5}},
+	{"id": "miners_union", "character_id": "miner_rep", "title": "Safety First", "description": "The miners want a union and better safety gear after too many close calls.", "objective": "Recognize the union or spend 10 Iron and 5 Aluminum on gear upgrades", "deadline_weeks": 4, "reward": "+15 morale and fewer accidents for 6 weeks", "objective_type": "choice", "reward_effects": {"morale": 15}},
+	{"id": "festival_day", "character_id": "shop_owner", "title": "A Reason to Celebrate", "description": "Shop owners want to throw a colony-wide festival to lift everyone's spirits.", "objective": "Spend 10 Kristals and 5 Hydrogen on a festival", "deadline_weeks": 2, "reward": "+20 morale for 3 weeks", "objective_type": "spend_resources", "inputs": {"kristals": 10, "hydrogen": 5}, "reward_effects": {"morale": 20}}
 ]
 
 
@@ -533,6 +533,96 @@ const TECHNOLOGIES: Array[Dictionary] = [
 ]
 
 
+## Playable leader classes shown on the character select screen.
+## starting_bonus is added to STARTING_STATE resources when a new game begins.
+## level_bonus is what the LevelUpPopup displays; its gameplay effect is still TBD.
+const PLAYER_CLASSES: Array[Dictionary] = [
+	{
+		"id": "engineer",
+		"name": "Engineer",
+		"perk": "Starts with extra building materials.",
+		"primary_stat": "engineering",
+		"starting_stats": {"engineering": 3, "science": 1, "leadership": 1, "negotiation": 1},
+		"starting_bonus": {"carbon": 5, "aluminum": 3},
+		"level_bonus": {"name": "Construction efficiency", "amount": 5.0}
+	},
+	{
+		"id": "scientist",
+		"name": "Scientist",
+		"perk": "Starts with extra gases for terraforming.",
+		"primary_stat": "science",
+		"starting_stats": {"engineering": 1, "science": 3, "leadership": 1, "negotiation": 1},
+		"starting_bonus": {"oxygen": 5, "hydrogen": 5},
+		"level_bonus": {"name": "Research speed", "amount": 5.0}
+	},
+	{
+		"id": "diplomat",
+		"name": "Diplomat",
+		"perk": "Starts with extra Kristals from Empire contacts.",
+		"primary_stat": "negotiation",
+		"starting_stats": {"engineering": 1, "science": 1, "leadership": 1, "negotiation": 3},
+		"starting_bonus": {"kristals": 10},
+		"level_bonus": {"name": "Negotiation power", "amount": 5.0}
+	},
+	{
+		"id": "commander",
+		"name": "Commander",
+		"perk": "Starts with extra metals for heavy projects.",
+		"primary_stat": "leadership",
+		"starting_stats": {"engineering": 1, "science": 1, "leadership": 3, "negotiation": 1},
+		"starting_bonus": {"iron": 5, "copper": 5},
+		"level_bonus": {"name": "Crew morale", "amount": 5.0}
+	}
+]
+
+
+## ---------------------------------------------------------------------------
+## Game rule numbers. These are placeholder values for balancing; change them
+## here instead of inside scripts.
+## ---------------------------------------------------------------------------
+
+## Values a new playthrough starts with.
+const STARTING_STATE: Dictionary = {
+	"total_weeks": 52,
+	"population": 1000,
+	"morale": 100,
+	"resources": {
+		"kristals": 5, "oxygen": 5, "nitrogen": 5, "hydrogen": 5, "carbon": 5,
+		"iron": 5, "copper": 5, "aluminum": 5, "risium": 5
+	}
+}
+
+## Colony map size in tiles.
+const MAP_COLUMNS: int = 5
+const MAP_ROWS: int = 4
+const DEFAULT_TERRAIN: String = "Flat"
+
+## Limited outside support from the Empire, received every week.
+const WEEKLY_SUPPLY: Dictionary = {"kristals": 5, "oxygen": 2, "risium": 2}
+
+## Resources the colony consumes every week regardless of buildings.
+const WEEKLY_UPKEEP: Dictionary = {"oxygen": 2}
+
+## Morale lost each week for every resource the colony could not fully pay upkeep for.
+const SHORTAGE_MORALE_PENALTY: int = 10
+
+## Risium quota results. The quota amount itself comes from make_risium_quest().
+const QUOTA_SUCCESS_EFFECTS: Dictionary = {"kristals": 10, "xp": 10}
+const QUOTA_FAILURE_EFFECTS: Dictionary = {"morale": -10}
+
+## Applied when an accepted villager quest passes its deadline unfinished.
+const QUEST_FAILURE_EFFECTS: Dictionary = {"morale": -5}
+const QUEST_COMPLETION_XP: int = 25
+const BUILD_XP: int = 5
+const RESEARCH_XP: int = 15
+
+## XP needed to go from level N to N + 1 is XP_PER_LEVEL * N.
+const XP_PER_LEVEL: int = 100
+
+## Repairing a damaged or unstable building costs this fraction of its build cost (rounded up).
+const REPAIR_COST_FRACTION: float = 0.5
+
+
 ## Returns a copy so runtime code cannot accidentally change the catalog entry.
 func get_quest_by_id(quest_id: String) -> Dictionary:
 	for quest in VILLAGER_QUESTS:
@@ -602,3 +692,41 @@ func make_risium_quest(week: int) -> Dictionary:
 		"deadline_weeks": 0,
 		"reward": "Funding for the colony"
 	}
+
+
+func get_player_class(class_id: String) -> Dictionary:
+	for player_class in PLAYER_CLASSES:
+		if player_class.get("id", "") == class_id:
+			return player_class.duplicate(true)
+	return {}
+
+
+func get_technology_by_id(tech_id: String) -> Dictionary:
+	for tech in TECHNOLOGIES:
+		if tech.get("id", "") == tech_id:
+			return tech.duplicate(true)
+	return {}
+
+
+func get_resource_name(resource_id: String) -> String:
+	return RESOURCES.get(resource_id, {}).get("name", resource_id.capitalize())
+
+
+## Turns {"kristals": 5, "carbon": 3} into "5 Kristals, 3 Carbon".
+func format_cost(cost: Dictionary) -> String:
+	if cost.is_empty():
+		return "Free"
+	var parts: PackedStringArray = []
+	for resource_id in cost:
+		parts.append("%d %s" % [int(cost[resource_id]), get_resource_name(resource_id)])
+	return ", ".join(parts)
+
+
+## Turns reward effects like {"kristals": 5, "morale": 5} into "+5 Kristals, +5 Morale".
+func format_effects(effects: Dictionary) -> String:
+	var parts: PackedStringArray = []
+	for key in effects:
+		var amount: int = int(effects[key])
+		var label: String = "XP" if key == "xp" else get_resource_name(key)
+		parts.append("%+d %s" % [amount, label])
+	return ", ".join(parts)

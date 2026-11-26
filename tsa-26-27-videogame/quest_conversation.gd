@@ -1,23 +1,25 @@
 extends Control
+## Plays a villager's dialogue from ContentDB, then offers their quest.
+## GameRoot calls start_conversation() and forwards accept/decline to GameState.
 
 signal quest_accepted(quest: Dictionary)
 signal quest_declined(quest: Dictionary)
 
+const CONTENT := "DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/"
 
+@onready var speaker_name: Label = get_node(CONTENT + "SpeakerName")
+@onready var dialogue_text: Label = get_node(CONTENT + "DialogueText")
+@onready var portrait: TextureRect = get_node(CONTENT + "SpeakerRow/Portrait")
 
-@onready var speaker_name: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/SpeakerName
-@onready var dialogue_text: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/DialogueText
-@onready var portrait: TextureRect = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/SpeakerRow/Portrait
+@onready var quest_summary: VBoxContainer = get_node(CONTENT + "QuestSummary")
+@onready var quest_title: Label = get_node(CONTENT + "QuestSummary/QuestTitle")
+@onready var objective_text: Label = get_node(CONTENT + "QuestSummary/ObjectiveText")
+@onready var deadline_text: Label = get_node(CONTENT + "QuestSummary/DeadlineText")
+@onready var reward_text: Label = get_node(CONTENT + "QuestSummary/RewardText")
 
-@onready var quest_summary: VBoxContainer = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary
-@onready var quest_title: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary/QuestTitle
-@onready var objective_text: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary/ObjectiveText
-@onready var deadline_text: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary/DeadlineText
-@onready var reward_text: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary/RewardText
-
-@onready var continue_button: Button = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/Buttons/ContinueButton
-@onready var accept_button: Button = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/Buttons/AcceptButton
-@onready var decline_button: Button = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/Buttons/DeclineButton
+@onready var continue_button: Button = get_node(CONTENT + "Buttons/ContinueButton")
+@onready var accept_button: Button = get_node(CONTENT + "Buttons/AcceptButton")
+@onready var decline_button: Button = get_node(CONTENT + "Buttons/DeclineButton")
 
 var current_quest: Dictionary = {}
 var dialogue_lines: Array = []
@@ -28,18 +30,23 @@ func _ready() -> void:
 	continue_button.pressed.connect(_on_continue_pressed)
 	accept_button.pressed.connect(_on_accept_pressed)
 	decline_button.pressed.connect(_on_decline_pressed)
-	# Temporary preview: show the first quest from the database.
-	var preview_quest: Dictionary = ContentDb.VILLAGER_QUESTS[randi_range(0, len(ContentDb.VILLAGER_QUESTS)-1)]
-	start_conversation(preview_quest)
-	
+
+	# Lets this scene run on its own (F6) for testing with a random quest.
+	if get_tree().current_scene == self:
+		start_conversation(ContentDB.get_random_villager_quest())
+	else:
+		hide()
 
 
 func start_conversation(quest: Dictionary) -> void:
 	current_quest = quest
-	dialogue_lines = ContentDb.get_dialogue(
-		str(quest.get("id", ""))
-	)
+	dialogue_lines = ContentDB.get_dialogue(str(quest.get("id", "")))
 	line_index = 0
+
+	var character: Dictionary = ContentDB.get_character_by_id(str(quest.get("character_id", "")))
+	var portrait_path: String = str(character.get("portrait", ContentDB.DEFAULT_PORTRAIT))
+	if ResourceLoader.exists(portrait_path):
+		portrait.texture = load(portrait_path)
 
 	quest_summary.hide()
 	accept_button.hide()
@@ -47,8 +54,7 @@ func start_conversation(quest: Dictionary) -> void:
 	continue_button.show()
 
 	if dialogue_lines.is_empty():
-		speaker_name.text = "Dialogue missing"
-		dialogue_text.text = "No conversation found for quest: " + str(quest.get("id", ""))
+		_show_quest_offer()
 	else:
 		_show_current_line()
 
@@ -59,7 +65,6 @@ func _show_current_line() -> void:
 	var line: Dictionary = dialogue_lines[line_index]
 	speaker_name.text = line.get("speaker", "Unknown")
 	dialogue_text.text = line.get("text", "")
-	var portrait_path: String = current_quest.get("portrait_path", "")
 
 
 func _on_continue_pressed() -> void:
@@ -86,10 +91,10 @@ func _show_quest_offer() -> void:
 
 
 func _on_accept_pressed() -> void:
-	quest_accepted.emit(current_quest)
 	hide()
+	quest_accepted.emit(current_quest)
 
 
 func _on_decline_pressed() -> void:
-	quest_declined.emit(current_quest)
 	hide()
+	quest_declined.emit(current_quest)

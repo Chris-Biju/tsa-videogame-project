@@ -47,6 +47,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="QuestListPanel" type="PanelContainer" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns"]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 
 [node name="QuestList" type="VBoxContainer" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestListPanel"]
@@ -71,6 +72,7 @@ theme_override_font_sizes/font_size = 24
 
 [node name="QuestDescription" type="Label" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
 layout_mode = 2
+autowrap_mode = 2
 
 [node name="ObjectiveLabel" type="Label" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
 layout_mode = 2
@@ -83,6 +85,15 @@ layout_mode = 2
 
 [node name="StatusLabel" type="Label" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
 layout_mode = 2
+
+[node name="ActionButton" type="Button" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Complete"
+
+[node name="ActionHint" type="Label" parent="DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+autowrap_mode = 2
 
 [node name="BackButton" type="Button" parent="DimBackground/ScreenMargin/MainLayout"]
 layout_mode = 2

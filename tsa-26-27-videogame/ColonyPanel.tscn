@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://p5ake11fmjv4" path="res://colony_panel.gd" id="1_l5v8p"]
 
 [node name="ColonyPanel" type="PanelContainer" unique_id=319582178]
-offset_right = 40.0
+custom_minimum_size = Vector2(300, 0)
+offset_right = 300.0
 offset_bottom = 40.0
 script = ExtResource("1_l5v8p")
 
@@ -22,8 +23,17 @@ text = "Terrain"
 layout_mode = 2
 text = "Building"
 
+[node name="DetailsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+autowrap_mode = 2
+
 [node name="BuildButton" type="Button" parent="VBoxContainer" unique_id=927395254]
 layout_mode = 2
 text = "Build"
 
+[node name="RepairButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Repair"
+
 [connection signal="pressed" from="VBoxContainer/BuildButton" to="." method="_on_build_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RepairButton" to="." method="_on_repair_button_pressed"]

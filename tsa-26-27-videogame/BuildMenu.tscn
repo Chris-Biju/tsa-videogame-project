@@ -4,15 +4,36 @@
 
 [node name="BuildMenu" type="Control" unique_id=641668789]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_0xsru")
 
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=569244055]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(560, 520)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -260.0
+offset_right = 280.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1283457793]
 layout_mode = 2
@@ -21,8 +42,14 @@ layout_mode = 2
 layout_mode = 2
 text = "Build Options:"
 
-[node name="BuildingList" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2039297171]
+[node name="Scroll" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="BuildingList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Scroll" unique_id=2039297171]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="CancelButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=803994855]
 layout_mode = 2

@@ -5,46 +5,69 @@
 [ext_resource type="PackedScene" uid="uid://bxuxrxbprhm0d" path="res://ColonyMap.tscn" id="2_dsga4"]
 [ext_resource type="PackedScene" uid="uid://eq3f5iqkt7yf" path="res://ColonyPanel.tscn" id="3_3v2fp"]
 [ext_resource type="PackedScene" uid="uid://xf0sctorexxs" path="res://BuildMenu.tscn" id="5_3v2fp"]
-[ext_resource type="PackedScene" uid="uid://83wlglriiswr" path="res://weekly_events.tscn" id="5_h5w0x"]
 
 [node name="ColonyScreen" type="Control" unique_id=1397028783]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_x5ahb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=869161477]
-layout_mode = 0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TopBar" parent="VBoxContainer" unique_id=206461302 instance=ExtResource("2_3v2fp")]
 layout_mode = 2
 
 [node name="MainContent" type="HBoxContainer" parent="VBoxContainer" unique_id=1144289842]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ColonyMap" parent="VBoxContainer/MainContent" unique_id=1393233192 instance=ExtResource("2_dsga4")]
-custom_minimum_size = Vector2(670, 0)
+custom_minimum_size = Vector2(670, 530)
 layout_mode = 2
 
-[node name="ColonyPanel" parent="VBoxContainer/MainContent" unique_id=319582178 instance=ExtResource("3_3v2fp")]
+[node name="RightColumn" type="VBoxContainer" parent="VBoxContainer/MainContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColonyPanel" parent="VBoxContainer/MainContent/RightColumn" unique_id=319582178 instance=ExtResource("3_3v2fp")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Actions" type="HBoxContainer" parent="VBoxContainer/MainContent/RightColumn"]
 layout_mode = 2
 
-[node name="EndWeekButton" type="Button" parent="VBoxContainer/MainContent" unique_id=2095651233]
+[node name="QuestsButton" type="Button" parent="VBoxContainer/MainContent/RightColumn/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quests"
+
+[node name="ResearchButton" type="Button" parent="VBoxContainer/MainContent/RightColumn/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Research"
+
+[node name="EndWeekButton" type="Button" parent="VBoxContainer/MainContent/RightColumn" unique_id=2095651233]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "End Week"
 
-[node name="WeeklyEvents" parent="." unique_id=1962947326 instance=ExtResource("5_h5w0x")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 185.0
-offset_right = 986.0
-offset_bottom = 185.0
+[node name="EventBanner" type="PanelContainer" parent="VBoxContainer" unique_id=1120543046]
+layout_mode = 2
+
+[node name="EventButton" type="Button" parent="VBoxContainer/EventBanner"]
+layout_mode = 2
+text = "No event this week"
+flat = true
+alignment = 0
 
 [node name="BuildMenu" parent="." unique_id=641668789 instance=ExtResource("5_3v2fp")]
-layout_mode = 0
-
-[connection signal="tile_selected" from="VBoxContainer/MainContent/ColonyMap" to="." method="_on_colony_map_tile_selected"]
-[connection signal="build_requested" from="VBoxContainer/MainContent/ColonyPanel" to="." method="_on_colony_panel_build_requested"]
-[connection signal="pressed" from="VBoxContainer/MainContent/EndWeekButton" to="." method="_on_end_week_button_pressed"]
+layout_mode = 1
