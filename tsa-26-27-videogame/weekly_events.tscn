@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://83wlglriiswr"]
+
+[ext_resource type="Script" uid="uid://cv72l42dihywh" path="res://weekly_events.gd" id="1_us4pa"]
+
+[node name="WeeklyEvents" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_us4pa")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08627451, 0.10980392, 0.14117648, 0.58431375)
+
+[node name="CenterContainer" type="CenterContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EventPanel" type="PanelContainer" parent="Background/CenterContainer"]
+custom_minimum_size = Vector2(550, 300)
+layout_mode = 2
+
+[node name="EventMargin" type="MarginContainer" parent="Background/CenterContainer/EventPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="EventContent" type="VBoxContainer" parent="Background/CenterContainer/EventPanel/EventMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EventType" type="Label" parent="Background/CenterContainer/EventPanel/EventMargin/EventContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+
+[node name="EventTitle" type="Label" parent="Background/CenterContainer/EventPanel/EventMargin/EventContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="EventDescription" type="Label" parent="Background/CenterContainer/EventPanel/EventMargin/EventContent"]
+layout_mode = 2
+
+[node name="EventEffect" type="Label" parent="Background/CenterContainer/EventPanel/EventMargin/EventContent"]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Background/CenterContainer/EventPanel/EventMargin/EventContent"]
+layout_mode = 2
+text = "Continue"
