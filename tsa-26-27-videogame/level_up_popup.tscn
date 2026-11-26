@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cdeo3xwjl7k8u"]
+
+[ext_resource type="Script" uid="uid://b5p8twtuufbnc" path="res://level_up_popup.gd" id="1_7gryo"]
+
+[node name="LevelUpPopup" type="PanelContainer" unique_id=1615567533]
+custom_minimum_size = Vector2(900, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7gryo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1629684020]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Titel" type="Label" parent="VBoxContainer" unique_id=2088316893]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "LEVEL UP!"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer" unique_id=288416283]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Level 2"
+horizontal_alignment = 1
+
+[node name="UpgradeDescription" type="Label" parent="VBoxContainer" unique_id=1281969877]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Your specialization has improved!"
+horizontal_alignment = 1
+
+[node name="BonusLabel" type="Label" parent="VBoxContainer" unique_id=1469812458]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1644160636]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 45
+text = "Continue"
