@@ -76,6 +76,7 @@ theme_override_constants/separation = 10
 
 [node name="QuestTitle" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 
 [node name="QuestDescription" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
 layout_mode = 2
