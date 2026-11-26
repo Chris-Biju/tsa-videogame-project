@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dhs7mfl815mne" path="res://icon.svg" id="2_lqvjn"]
 
 [node name="ColonyTile" type="Panel" unique_id=618690360]
-offset_right = 8.0
-offset_bottom = 8.0
+custom_minimum_size = Vector2(64, 64)
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 41.0
 script = ExtResource("1_hm5mu")
 terrain_texture = ExtResource("2_lqvjn")
 
@@ -34,4 +36,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="selected" from="." to="." method="_on_click_area_pressed"]
+[connection signal="pressed" from="ClickArea" to="." method="_on_click_area_pressed"]
