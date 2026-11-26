@@ -25,6 +25,10 @@ func _on_continue_pressed() -> void:
 func _process(_delta: float) -> void:
 	pass
 	
-func _on_end_week_requested() -> void:
+
+
+
+func _on_colony_screen_end_week_requested() -> void:
+	print("hi")
 	var report:Dictionary = GameState.advance_week()
 	show_report(report)

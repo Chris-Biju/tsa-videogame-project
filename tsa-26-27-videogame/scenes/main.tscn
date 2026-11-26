@@ -1,48 +1,9 @@
 [gd_scene format=3 uid="uid://cuheqo2heaiqv"]
 
-[ext_resource type="Script" uid="uid://dwbnma5p1cyka" path="res://scenes/notification_layer.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://djtw5mhv2ogcp" path="res://scenes/ui/ResourceReport.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bg5sffey25u2q" path="res://scenes/screen_manager.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://5xxuk8kpn4pg" path="res://scripts/ContentDB.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c1327w67jt17t" path="res://scenes/GameRoot.tscn" id="2_sugp2"]
 
-[node name="GameRoot" type="Control" unique_id=422049187]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="ScreenManager" type="Control" parent="." unique_id=1745350358]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_sugp2")
-
-[node name="NotificationLayer" type="CanvasLayer" parent="." unique_id=1500613542]
+[node name="Main" type="Node" unique_id=1930952950]
 script = ExtResource("1_0wfyh")
 
-[node name="Panel" type="PanelContainer" parent="NotificationLayer" unique_id=1338397974]
-offset_left = 151.0
-offset_top = 4.0
-offset_right = 258.0
-offset_bottom = 44.0
-
-[node name="MessageLabel" type="Label" parent="NotificationLayer/Panel" unique_id=19571141]
-layout_mode = 2
-text = "Oxygen is low"
-
-[node name="HideTimer" type="Timer" parent="NotificationLayer" unique_id=614432026]
-
-[node name="ModalLayer" type="CanvasLayer" parent="." unique_id=506064713]
-
-[node name="ResourceReport" parent="ModalLayer" unique_id=1503186021 instance=ExtResource("1_o5qli")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -205.0
-offset_top = -69.5
-offset_right = 205.0
-offset_bottom = 69.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameRoot" parent="." unique_id=422049187 instance=ExtResource("2_sugp2")]

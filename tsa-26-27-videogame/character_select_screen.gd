@@ -7,6 +7,7 @@ func _ready():
 	$maincontainer/cardscontainer/scientistcard/scientistcontent/button.pressed.connect(on_scientist_pressed)
 	$maincontainer/cardscontainer/diplomatcard/diplomatcontent/button.pressed.connect(on_diplomat_pressed)
 	$maincontainer/cardscontainer/commandercard/VBoxContainer/button.pressed.connect(on_commander_pressed)
+	$button.pressed.connect(on_confirm_selection)
 	# Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_engineer_pressed():
 	select_character("engineer")
@@ -19,7 +20,7 @@ func on_commander_pressed():
 
 func select_character(character):
 	selected_character = character
-func confirm_selection():
+func on_confirm_selection():
 	if(selected_character != ""):
 		GameState.selected_character = selected_character
-		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+		get_tree().change_scene_to_file("res://colony_screen.tscn")

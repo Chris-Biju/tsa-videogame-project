@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c1327w67jt17t"]
+
+[ext_resource type="Script" uid="uid://bg5sffey25u2q" path="res://scenes/screen_manager.gd" id="1_kbynm"]
+[ext_resource type="PackedScene" uid="uid://cju77fwf3l4vi" path="res://colony_screen.tscn" id="2_p13ka"]
+[ext_resource type="Script" uid="uid://dwbnma5p1cyka" path="res://scenes/notification_layer.gd" id="2_tnfu1"]
+[ext_resource type="PackedScene" uid="uid://csnsyj1lugyki" path="res://character_select_screen.tscn" id="3_it2jm"]
+[ext_resource type="PackedScene" uid="uid://djtw5mhv2ogcp" path="res://scenes/ui/ResourceReport.tscn" id="3_v7i1n"]
+[ext_resource type="PackedScene" uid="uid://dexymccs4512c" path="res://quest_screen.tscn" id="4_foumo"]
+[ext_resource type="PackedScene" uid="uid://dkkoeq56lvr8p" path="res://quest_conversation.tscn" id="5_d5ocq"]
+
+[node name="GameRoot" type="Control" unique_id=422049187]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ScreenManager" type="Control" parent="." unique_id=1745350358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kbynm")
+
+[node name="ColonyScreen" parent="ScreenManager" unique_id=1397028783 instance=ExtResource("2_p13ka")]
+layout_mode = 0
+
+[node name="CharacterSelectScreen" parent="ScreenManager" unique_id=657771406 instance=ExtResource("3_it2jm")]
+layout_mode = 1
+
+[node name="QuestScreen" parent="ScreenManager" unique_id=1836269820 instance=ExtResource("4_foumo")]
+layout_mode = 1
+
+[node name="QuestConversation" parent="ScreenManager" unique_id=629176416 instance=ExtResource("5_d5ocq")]
+layout_mode = 1
+
+[node name="NotificationLayer" type="CanvasLayer" parent="." unique_id=1500613542]
+script = ExtResource("2_tnfu1")
+
+[node name="Panel" type="PanelContainer" parent="NotificationLayer" unique_id=1338397974]
+offset_left = 151.0
+offset_top = 4.0
+offset_right = 258.0
+offset_bottom = 44.0
+
+[node name="MessageLabel" type="Label" parent="NotificationLayer/Panel" unique_id=19571141]
+layout_mode = 2
+text = "Oxygen is low"
+
+[node name="HideTimer" type="Timer" parent="NotificationLayer" unique_id=614432026]
+
+[node name="ModalLayer" type="CanvasLayer" parent="." unique_id=506064713]
+
+[node name="ResourceReport" parent="ModalLayer" unique_id=1503186021 instance=ExtResource("3_v7i1n")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -69.5
+offset_right = 205.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="end_week_requested" from="ScreenManager/ColonyScreen" to="ModalLayer/ResourceReport" method="_on_colony_screen_end_week_requested"]

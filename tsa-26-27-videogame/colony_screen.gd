@@ -40,4 +40,5 @@ func _on_colony_panel_build_requested() -> void:
 
 
 func _on_end_week_button_pressed() -> void:
+	print("end")
 	end_week_requested.emit()

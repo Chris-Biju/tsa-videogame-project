@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://83wlglriiswr"]
+[gd_scene format=3 uid="uid://83wlglriiswr"]
 
 [ext_resource type="Script" uid="uid://cv72l42dihywh" path="res://weekly_events.gd" id="1_us4pa"]
 

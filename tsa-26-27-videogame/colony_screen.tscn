@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxuxrxbprhm0d" path="res://ColonyMap.tscn" id="2_dsga4"]
 [ext_resource type="PackedScene" uid="uid://eq3f5iqkt7yf" path="res://ColonyPanel.tscn" id="3_3v2fp"]
 [ext_resource type="PackedScene" uid="uid://xf0sctorexxs" path="res://BuildMenu.tscn" id="5_3v2fp"]
+[ext_resource type="PackedScene" uid="uid://83wlglriiswr" path="res://weekly_events.tscn" id="5_h5w0x"]
 
 [node name="ColonyScreen" type="Control" unique_id=1397028783]
 layout_mode = 3
@@ -32,8 +33,14 @@ layout_mode = 2
 layout_mode = 2
 text = "End Week"
 
-[node name="EventBanner" type="PanelContainer" parent="VBoxContainer" unique_id=1120543046]
-layout_mode = 2
+[node name="WeeklyEvents" parent="." unique_id=1962947326 instance=ExtResource("5_h5w0x")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 185.0
+offset_right = 986.0
+offset_bottom = 185.0
 
 [node name="BuildMenu" parent="." unique_id=641668789 instance=ExtResource("5_3v2fp")]
 layout_mode = 0
