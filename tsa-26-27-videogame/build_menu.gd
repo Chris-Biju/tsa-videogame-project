@@ -31,7 +31,3 @@ func _on_building_pressed(building_id: String) -> void:
 func _on_cancel_pressed():
 	cancelled.emit()
 	hide()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

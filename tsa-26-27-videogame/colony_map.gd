@@ -35,7 +35,3 @@ func _on_tile_selected(tile_position: Vector2i) -> void:
 
 func get_tile_at(position: Vector2i):
 	return tiles[position.y][position.x]
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

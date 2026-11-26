@@ -12,11 +12,7 @@ func _ready() -> void:
 	colony_panel.show_no_selection()
 	colony_panel.build_requested.connect(_on_build_requested)
 	build_menu.building_chosen.connect(_on_building_chosen)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	colony_map.tile_selected.connect(_on_colony_map_tile_selected)
 
 
 func _on_colony_map_tile_selected(position: Vector2i) -> void:
@@ -29,16 +25,14 @@ func _on_build_requested() -> void:
 
 func _on_building_chosen(building_id: String) -> void:
 	var tile = colony_map.get_tile_at(selected_position)
-	
-	if not tile.is_buildable():
-		return
-	
 	var display_name: String = building_id.capitalize()
+	
+	if not tile.place_building(building_id, display_name):
+		return
 	var building = BUILDING_SCENE.instantiate()
 	tile.add_child(building)
 	building.setup(building_id, display_name)
-	
-	tile.place_building(building_id, display_name)
+
 	colony_panel.show_tile_details(selected_position, tile.terrain_name, tile.building_name, false)
 
 func _on_colony_panel_build_requested() -> void:

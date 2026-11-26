@@ -5,7 +5,7 @@ signal selected(tile_position: Vector2i)
 
 
 @export var terrain_texture: Texture2D
-var tile_position 
+var tile_position : Vector2i = Vector2.ZERO
 var has_building := false
 var terrain_name := "Flat"
 var building_name := ""
@@ -31,13 +31,9 @@ func is_buildable() -> bool:
 	return not has_building
 
 func place_building(id: String, display_name: String) -> bool:
-	if not is_buildable:
+	if not is_buildable():
 		return false
 	
 	has_building = true
 	building_name = display_name
 	return true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

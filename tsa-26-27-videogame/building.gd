@@ -15,7 +15,3 @@ func setup(id: String, display_name: String, texture: Texture2D = null) -> void:
 	
 	if texture != null:
 		building_sprite.texture = texture
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
