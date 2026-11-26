@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bdmp3yy2x64vu"]
+
+[ext_resource type="Script" uid="uid://rmkr5xlfmsva" path="res://scenes/tech_screen.gd" id="1_j3nf3"]
+
+[node name="TechScreen" type="Control" unique_id=315605651]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_j3nf3")
+
+[node name="HScrollContainer" type="HScrollBar" parent="." unique_id=972548064]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VScrollContainer" type="VBoxContainer" parent="HScrollContainer" unique_id=755253270]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 40.0
+
+[node name="ResearchButton1" type="Button" parent="HScrollContainer/VScrollContainer" unique_id=1644985659]
+layout_mode = 2
+text = "Efficient Mining
+"
+
+[node name="ResearchButton2" type="Button" parent="HScrollContainer/VScrollContainer" unique_id=447122587]
+layout_mode = 2
+text = "LifeSupport
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="HScrollContainer" unique_id=1924868403]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 13.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HScrollContainer/PanelContainer" unique_id=870735058]
+layout_mode = 2
+text = "Select a research topic to see details"
