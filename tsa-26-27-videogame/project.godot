@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="tsa-26-27-videogame"
-run/main_scene="uid://bjd3negpb0mj2"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
