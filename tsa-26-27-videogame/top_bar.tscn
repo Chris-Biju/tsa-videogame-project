@@ -28,7 +28,7 @@ text = "Carbon: 10"
 layout_mode = 2
 text = "Hydrogen: 5"
 
-[node name="MetalsLabel" type="Label" parent="." unique_id=558921025]
+[node name="CopperLabel" type="Label" parent="." unique_id=558921025]
 layout_mode = 2
 text = "Metals: 20"
 
@@ -45,4 +45,10 @@ layout_mode = 2
 text = "Morale: 10"
 
 [node name="WarningLabel" type="Label" parent="." unique_id=765414998]
+layout_mode = 2
+
+[node name="IronLabel" type="Label" parent="." unique_id=769948192]
+layout_mode = 2
+
+[node name="AluminumLabel" type="Label" parent="." unique_id=173893608]
 layout_mode = 2

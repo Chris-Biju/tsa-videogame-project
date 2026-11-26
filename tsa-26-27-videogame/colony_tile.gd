@@ -26,6 +26,17 @@ func set_building(texture: Texture2D) -> void:
 
 func _on_click_area_pressed() -> void:
 	selected.emit(tile_position)
+ 
+func is_buildable() -> bool:
+	return not has_building
+
+func place_building(id: String, display_name: String) -> bool:
+	if not is_buildable:
+		return false
+	
+	has_building = true
+	building_name = display_name
+	return true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

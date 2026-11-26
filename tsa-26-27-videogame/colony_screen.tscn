@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://mc0daqc03bdl" path="res://top_bar.tscn" id="2_3v2fp"]
 [ext_resource type="PackedScene" uid="uid://bxuxrxbprhm0d" path="res://ColonyMap.tscn" id="2_dsga4"]
 [ext_resource type="PackedScene" uid="uid://eq3f5iqkt7yf" path="res://ColonyPanel.tscn" id="3_3v2fp"]
+[ext_resource type="PackedScene" uid="uid://xf0sctorexxs" path="res://BuildMenu.tscn" id="5_3v2fp"]
 
 [node name="ColonyScreen" type="Control" unique_id=1397028783]
 layout_mode = 3
@@ -27,11 +28,16 @@ layout_mode = 2
 [node name="ColonyPanel" parent="VBoxContainer/MainContent" unique_id=319582178 instance=ExtResource("3_3v2fp")]
 layout_mode = 2
 
+[node name="EndWeekButton" type="Button" parent="VBoxContainer/MainContent" unique_id=2095651233]
+layout_mode = 2
+text = "End Week"
+
 [node name="EventBanner" type="PanelContainer" parent="VBoxContainer" unique_id=1120543046]
 layout_mode = 2
 
-[node name="EndWeekButton" type="Button" parent="VBoxContainer" unique_id=2095651233]
-layout_mode = 2
+[node name="BuildMenu" parent="." unique_id=641668789 instance=ExtResource("5_3v2fp")]
+layout_mode = 0
 
 [connection signal="tile_selected" from="VBoxContainer/MainContent/ColonyMap" to="." method="_on_colony_map_tile_selected"]
 [connection signal="build_requested" from="VBoxContainer/MainContent/ColonyPanel" to="." method="_on_colony_panel_build_requested"]
+[connection signal="pressed" from="VBoxContainer/MainContent/EndWeekButton" to="." method="_on_end_week_button_pressed"]
