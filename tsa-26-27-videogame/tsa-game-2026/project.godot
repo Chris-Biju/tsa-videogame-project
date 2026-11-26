@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="tsa-26-27-videogame"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+config/name="TSA Game 2026"
+run/main_scene="uid://cuheqo2heaiqv"
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[display]
+[autoload]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+GameState="*uid://fic68les44o3"
 
 [physics]
 
@@ -26,5 +26,3 @@ window/stretch/aspect="expand"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
