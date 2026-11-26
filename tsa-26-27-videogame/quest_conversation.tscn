@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkkoeq56lvr8p"]
+
+[ext_resource type="Script" uid="uid://t17ru1yxnqmw" path="res://quest_conversation.gd" id="1_d8wxo"]
+[ext_resource type="Texture2D" uid="uid://dhs7mfl815mne" path="res://icon.svg" id="2_upyhp"]
+
+[node name="QuestConversation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_d8wxo")
+
+[node name="DimBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1495, 0.17633335, 0.23, 0.6666667)
+
+[node name="CenterContainer" type="CenterContainer" parent="DimBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConversationPanel" type="PanelContainer" parent="DimBackground/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DimBackground/CenterContainer/ConversationPanel"]
+custom_minimum_size = Vector2(550, 350)
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Content" type="VBoxContainer" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SpeakerRow" type="HBoxContainer" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/SpeakerRow"]
+layout_mode = 2
+texture = ExtResource("2_upyhp")
+
+[node name="SpeakerName" type="Label" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content"]
+layout_mode = 2
+text = "Speaker"
+
+[node name="DialogueText" type="Label" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content"]
+layout_mode = 2
+text = "Dialague"
+autowrap_mode = 2
+
+[node name="QuestSummary" type="VBoxContainer" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content"]
+layout_mode = 2
+
+[node name="QuestTitle" type="Label" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary"]
+layout_mode = 2
+text = "Title"
+
+[node name="ObjectiveText" type="Label" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary"]
+layout_mode = 2
+text = "Objective"
+
+[node name="DeadlineText" type="Label" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary"]
+layout_mode = 2
+text = "Deadline"
+
+[node name="RewardText" type="Label" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/QuestSummary"]
+layout_mode = 2
+text = "Reward"
+
+[node name="Buttons" type="HBoxContainer" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ContinueButton" type="Button" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/Buttons"]
+layout_mode = 2
+text = "Continue"
+
+[node name="AcceptButton" type="Button" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/Buttons"]
+layout_mode = 2
+text = "Accept"
+
+[node name="DeclineButton" type="Button" parent="DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/Buttons"]
+layout_mode = 2
+text = "Decline"
