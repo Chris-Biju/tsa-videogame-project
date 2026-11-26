@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://dexymccs4512c"]
+
+[ext_resource type="Script" uid="uid://cht4ow0rp4ctj" path="res://quest_screen.gd" id="1_o1v0v"]
+
+[node name="QuestScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o1v0v")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13570002, 0.17184833, 0.23, 1)
+
+[node name="ScreenMargin" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MainLayout" type="VBoxContainer" parent="Background/ScreenMargin"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Background/ScreenMargin/MainLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "COLONY REQUESTS"
+
+[node name="QuestColumns" type="HBoxContainer" parent="Background/ScreenMargin/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuestListPanel" type="PanelContainer" parent="Background/ScreenMargin/MainLayout/QuestColumns"]
+layout_mode = 2
+
+[node name="QuestList" type="VBoxContainer" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestListPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ListHeading" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestListPanel/QuestList"]
+layout_mode = 2
+text = "Active Requests"
+
+[node name="BuildHomeButton" type="Button" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestListPanel/QuestList"]
+layout_mode = 2
+text = "Build a Home"
+
+[node name="RisumQuotaButton" type="Button" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestListPanel/QuestList"]
+layout_mode = 2
+text = "Risium Quota
+"
+
+[node name="QuestDetailsPanel" type="PanelContainer" parent="Background/ScreenMargin/MainLayout/QuestColumns"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestDetails" type="VBoxContainer" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="QuestTitle" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+
+[node name="QuestDescription" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+
+[node name="ObjectiveLabel" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+
+[node name="DeadlineLabel" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+
+[node name="RewardLabel" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Background/ScreenMargin/MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
