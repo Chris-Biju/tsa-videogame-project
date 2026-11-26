@@ -12,7 +12,7 @@ func _ready() -> void:
 	continue_button.pressed.connect(_on_continue_button_pressed)
 
 	# Temporary preview: choose a random event when testing this scene.
-	var event: Dictionary = ContentDb.EVENTS.pick_random()
+	var event: Dictionary = ContentDb.get_random_weekly_event()
 	show_event(event)
 
 

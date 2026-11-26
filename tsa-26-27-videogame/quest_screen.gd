@@ -1,14 +1,13 @@
 extends Control
 
+@onready var quest_list: VBoxContainer = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestListPanel/QuestList
+@onready var quest_title: Label = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/QuestTitle
+@onready var quest_description: Label = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/QuestDescription
+@onready var objective_label: Label = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/ObjectiveLabel
+@onready var deadline_label: Label = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/DeadlineLabel
+@onready var reward_label: Label = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/RewardLabel
+@onready var status_label: Label = $DimBackground/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/StatusLabel
 
-
-@onready var quest_list: VBoxContainer = $Background/ScreenMargin/MainLayout/QuestColumns/QuestListPanel/QuestList
-@onready var quest_title: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/QuestTitle
-@onready var quest_description: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/QuestDescription
-@onready var objective_label: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/ObjectiveLabel
-@onready var deadline_label: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/DeadlineLabel
-@onready var reward_label: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/RewardLabel
-@onready var status_label: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/StatusLabel
 
 var active_quests: Array[Dictionary] = []
 
@@ -55,4 +54,4 @@ func show_quest(quest: Dictionary) -> void:
 		deadline_label.text = "Deadline: In %d week(s)" % weeks_left
 
 	reward_label.text = "Reward: " + quest["reward"]
-	status_label.text = "Status: " + quest["status"]
+	status_label.text = "Status: " + str(quest.get("status", "In progress"))
