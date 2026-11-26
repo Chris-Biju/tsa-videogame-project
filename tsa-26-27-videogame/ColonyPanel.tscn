@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://eq3f5iqkt7yf"]
+
+[ext_resource type="Script" uid="uid://p5ake11fmjv4" path="res://colony_panel.gd" id="1_l5v8p"]
+
+[node name="ColonyPanel" type="PanelContainer" unique_id=319582178]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_l5v8p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1007312671]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=319126352]
+layout_mode = 2
+text = "Title"
+
+[node name="TerrainLabel" type="Label" parent="VBoxContainer" unique_id=374427678]
+layout_mode = 2
+text = "Terrain"
+
+[node name="BuildingLabel" type="Label" parent="VBoxContainer" unique_id=1142175162]
+layout_mode = 2
+text = "Building"
+
+[node name="BuildButton" type="Button" parent="VBoxContainer" unique_id=927395254]
+layout_mode = 2
+text = "Build"
+
+[connection signal="pressed" from="VBoxContainer/BuildButton" to="." method="_on_build_button_pressed"]

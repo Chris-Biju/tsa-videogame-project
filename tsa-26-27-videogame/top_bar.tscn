@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://mc0daqc03bdl"]
+
+[ext_resource type="Script" uid="uid://vwamit1kjvwq" path="res://top_bar.gd" id="1_s4d5a"]
+
+[node name="TopBar" type="VBoxContainer" unique_id=1820702268]
+offset_right = 810.0
+offset_bottom = 40.0
+theme_override_constants/separation = 15
+script = ExtResource("1_s4d5a")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=228941020]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1201569527]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WeekLabel" type="Label" parent="HBoxContainer" unique_id=518288938]
+layout_mode = 2
+text = "Week: 1"
+
+[node name="KristalsLabel" type="Label" parent="HBoxContainer" unique_id=1080602721]
+layout_mode = 2
+text = "Kristals: 10"
+
+[node name="OxygenLabel" type="Label" parent="HBoxContainer" unique_id=283241269]
+layout_mode = 2
+text = "Oxygen: 20"
+
+[node name="CarbonLabel" type="Label" parent="HBoxContainer" unique_id=1431936812]
+layout_mode = 2
+text = "Carbon: 10"
+
+[node name="HydrogenLabel" type="Label" parent="HBoxContainer" unique_id=749311104]
+layout_mode = 2
+text = "Hydrogen: 5"
+
+[node name="CopperLabel" type="Label" parent="HBoxContainer" unique_id=558921025]
+layout_mode = 2
+text = "Metals: 20"
+
+[node name="RisiumLabel" type="Label" parent="HBoxContainer" unique_id=1072886755]
+layout_mode = 2
+text = "Risium: 5"
+
+[node name="PopulationLabel" type="Label" parent="HBoxContainer" unique_id=704552888]
+layout_mode = 2
+text = "Population: 100"
+
+[node name="MoraleLabel" type="Label" parent="HBoxContainer" unique_id=1748208107]
+layout_mode = 2
+text = "Morale: 10"
+
+[node name="WarningLabel" type="Label" parent="HBoxContainer" unique_id=765414998]
+layout_mode = 2
+
+[node name="IronLabel" type="Label" parent="HBoxContainer" unique_id=769948192]
+layout_mode = 2
+
+[node name="AluminumLabel" type="Label" parent="HBoxContainer" unique_id=173893608]
+layout_mode = 2

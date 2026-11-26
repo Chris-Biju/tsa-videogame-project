@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://xf0sctorexxs"]
+
+[ext_resource type="Script" uid="uid://d1q14wm6yba61" path="res://build_menu.gd" id="1_0xsru"]
+
+[node name="BuildMenu" type="Control" unique_id=641668789]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0xsru")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=569244055]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1283457793]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1512029196]
+layout_mode = 2
+text = "Build Options:"
+
+[node name="BuildingList" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2039297171]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=803994855]
+layout_mode = 2
+text = "Cancel"
