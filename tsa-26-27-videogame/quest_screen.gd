@@ -1,6 +1,6 @@
 extends Control
 
-const QuestDatabase = preload("res://scripts/quest_database.gd")
+
 
 @onready var quest_list: VBoxContainer = $Background/ScreenMargin/MainLayout/QuestColumns/QuestListPanel/QuestList
 @onready var quest_title: Label = $Background/ScreenMargin/MainLayout/QuestColumns/QuestDetailsPanel/QuestDetails/QuestTitle
@@ -20,10 +20,10 @@ func _ready() -> void:
 func start_week(week: int) -> void:
 	active_quests.clear()
 	## Company Quota
-	active_quests.append(QuestDatabase.make_risium_quest(week))
+	active_quests.append(ContentDb.make_risium_quest(week))
 	## Selecting villager requests from the database
 	for i in 5:
-		var possible_requests: Array = QuestDatabase.VILLAGER_QUESTS
+		var possible_requests: Array = ContentDb.VILLAGER_QUESTS
 		var random_index := randi_range(0, possible_requests.size()-1)
 		var villager_quest: Dictionary = possible_requests[random_index].duplicate(true)
 		villager_quest["appeared_week"] = week

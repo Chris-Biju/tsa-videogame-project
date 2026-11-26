@@ -14,6 +14,10 @@ config/name="tsa-26-27-videogame"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ContentDb="*res://scripts/ContentDB.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

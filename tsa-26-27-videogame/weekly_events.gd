@@ -1,6 +1,6 @@
 extends Control
 signal continue_pressed
-const WeeklyEventDatabase = preload("res://scripts/weekly_event_database.gd")
+
 
 @onready var event_type: Label = $Background/CenterContainer/EventPanel/EventMargin/EventContent/EventType
 @onready var event_title: Label = $Background/CenterContainer/EventPanel/EventMargin/EventContent/EventTitle
@@ -12,7 +12,7 @@ func _ready() -> void:
 	continue_button.pressed.connect(_on_continue_button_pressed)
 
 	# Temporary preview: choose a random event when testing this scene.
-	var event: Dictionary = WeeklyEventDatabase.EVENTS.pick_random()
+	var event: Dictionary = ContentDb.EVENTS.pick_random()
 	show_event(event)
 
 

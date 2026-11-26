@@ -3,7 +3,7 @@ extends Control
 signal quest_accepted(quest: Dictionary)
 signal quest_declined(quest: Dictionary)
 
-const QuestDatabase = preload("res://scripts/quest_database.gd")
+
 
 @onready var speaker_name: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/SpeakerName
 @onready var dialogue_text: Label = $DimBackground/CenterContainer/ConversationPanel/MarginContainer/Content/DialogueText
@@ -29,14 +29,14 @@ func _ready() -> void:
 	accept_button.pressed.connect(_on_accept_pressed)
 	decline_button.pressed.connect(_on_decline_pressed)
 	# Temporary preview: show the first quest from the database.
-	var preview_quest: Dictionary = QuestDatabase.VILLAGER_QUESTS[randi_range(0, len(QuestDatabase.VILLAGER_QUESTS)-1)]
+	var preview_quest: Dictionary = ContentDb.VILLAGER_QUESTS[randi_range(0, len(ContentDb.VILLAGER_QUESTS)-1)]
 	start_conversation(preview_quest)
 	
 
 
 func start_conversation(quest: Dictionary) -> void:
 	current_quest = quest
-	dialogue_lines = QuestDatabase.get_dialogue(
+	dialogue_lines = ContentDb.get_dialogue(
 		str(quest.get("id", ""))
 	)
 	line_index = 0
