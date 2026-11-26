@@ -15,7 +15,7 @@ func show_report(report: Dictionary) -> void:
 	kristals_label.text = "Kristals gained: %s" % report.get("kristals_gained", 0)
 	oxygen_label.text = "Oxygen used: %s" % report.get("oxygen_used", 0)
 	show()
-	
+
 func _on_continue_pressed() -> void:
 	hide()
 
