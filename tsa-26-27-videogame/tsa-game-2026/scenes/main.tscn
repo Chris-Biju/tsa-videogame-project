@@ -17,11 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sugp2")
 
-[node name="TopBar" type="HBoxContainer" parent="ScreenManager" unique_id=740275900]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="NotificationLayer" type="CanvasLayer" parent="." unique_id=1500613542]
 script = ExtResource("1_0wfyh")
 
@@ -40,7 +35,14 @@ text = "Oxygen is low"
 [node name="ModalLayer" type="CanvasLayer" parent="." unique_id=506064713]
 
 [node name="ResourceReport" parent="ModalLayer" unique_id=1503186021 instance=ExtResource("1_o5qli")]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 147.0
-offset_bottom = 140.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -69.5
+offset_right = 205.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2

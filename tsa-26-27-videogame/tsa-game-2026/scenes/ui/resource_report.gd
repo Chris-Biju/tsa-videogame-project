@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal end_week_requested
+
 @onready var week_label: Label = $VBoxContainer/WeekLabel
 @onready var kristals_label: Label = $VBoxContainer/KristalsLabel
 @onready var oxygen_label: Label = $VBoxContainer/OxygenLabel
@@ -22,3 +24,7 @@ func _on_continue_pressed() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+	
+func _on_end_week_requested() -> void:
+	var report:Dictionary = GameState.advance_week()
+	show_report(report)
