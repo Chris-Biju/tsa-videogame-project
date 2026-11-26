@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bxuxrxbprhm0d"]
+[gd_scene load_steps=0 format=3 uid="uid://bxuxrxbprhm0d"]
 
 [ext_resource type="Script" uid="uid://dsjqi6g5m8dsr" path="res://colony_map.gd" id="1_hl78n"]
 

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cju77fwf3l4vi"]
+[gd_scene load_steps=0 format=3 uid="uid://cju77fwf3l4vi"]
 
 [ext_resource type="Script" uid="uid://c3dmv1edvgpc5" path="res://colony_screen.gd" id="1_x5ahb"]
 [ext_resource type="PackedScene" uid="uid://mc0daqc03bdl" path="res://top_bar.tscn" id="2_3v2fp"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cdeo3xwjl7k8u"]
+[gd_scene load_steps=0 format=3 uid="uid://cdeo3xwjl7k8u"]
 
 [ext_resource type="Script" uid="uid://b5p8twtuufbnc" path="res://level_up_popup.gd" id="1_7gryo"]
 

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://csnsyj1lugyki"]
+[gd_scene load_steps=0 format=3 uid="uid://csnsyj1lugyki"]
 
 [ext_resource type="Script" uid="uid://c83ouq1xk4a1" path="res://character_select_screen.gd" id="1_lsbwu"]
 
