@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bco5vkyc1mf4h"]
+
+[node name="ResourceReport" type="PanelContainer" unique_id=1739727008]
+offset_right = 40.0
+offset_bottom = 40.0

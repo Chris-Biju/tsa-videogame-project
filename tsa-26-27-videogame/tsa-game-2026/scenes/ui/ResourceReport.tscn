@@ -1,21 +1,28 @@
 [gd_scene format=3 uid="uid://djtw5mhv2ogcp"]
 
+[ext_resource type="Script" uid="uid://bpccg5gjtxftg" path="res://scenes/ui/resource_report.gd" id="1_r4v6q"]
+
 [node name="ResourceReport" type="PanelContainer" unique_id=1503186021]
+script = ExtResource("1_r4v6q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=527542104]
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=2116947626]
 layout_mode = 2
+text = "\"Week report\""
 
 [node name="WeekLabel" type="Label" parent="VBoxContainer" unique_id=2029597464]
 layout_mode = 2
+text = "\"Week: 1\""
 
 [node name="KristalsLabel" type="Label" parent="VBoxContainer" unique_id=27850233]
 layout_mode = 2
+text = "\"Kristals gained: 5\""
 
 [node name="OxygenLabel" type="Label" parent="VBoxContainer" unique_id=1966522587]
 layout_mode = 2
+text = "\"Oxygen used: 2\""
 
-[node name="ContinueButton" type="Label" parent="VBoxContainer" unique_id=160219248]
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=474927939]
 layout_mode = 2

@@ -1,0 +1,20 @@
+config_version=5
+
+[application]
+
+config/name="TSA Game 2026 (4.6)"
+run/main_scene="uid://cuheqo2heaiqv"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://fic68les44o3"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

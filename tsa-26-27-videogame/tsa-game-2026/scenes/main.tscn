@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cuheqo2heaiqv"]
 
+[ext_resource type="PackedScene" uid="uid://djtw5mhv2ogcp" path="res://scenes/ui/ResourceReport.tscn" id="1_o5qli"]
+
 [node name="GameRoot" type="Node2D" unique_id=221274810]
 
 [node name="Label" type="Label" parent="." unique_id=509974108]
@@ -27,6 +29,4 @@ offset_bottom = 40.0
 
 [node name="ModalLayer" type="CanvasLayer" parent="." unique_id=506064713]
 
-[node name="ResourceReport" type="PanelContainer" parent="." unique_id=35992951]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ResourceReport" parent="ModalLayer" unique_id=1503186021 instance=ExtResource("1_o5qli")]
