@@ -5,8 +5,10 @@ signal selected(tile_position: Vector2i)
 
 
 @export var terrain_texture: Texture2D
-var tile_position := Vector2i.ZERO
+var tile_position 
 var has_building := false
+var terrain_name := "Flat"
+var building_name := ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

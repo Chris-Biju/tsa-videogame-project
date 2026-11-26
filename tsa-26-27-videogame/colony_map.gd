@@ -12,11 +12,12 @@ var tiles: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in rows:
+	for y in rows:
 		var row: Array = []
-		for o in cols:
+		for x in cols:
 			var tile = TILE_SCENE.instantiate()
-			tile.tile_position = Vector2i(o, i)
+			tile.tile_position = Vector2i(x, y)
+			#print(tile.tile_position)
 			tile.selected.connect(_on_tile_selected)
 			
 			grid.add_child(tile)
@@ -30,7 +31,10 @@ func _on_tile_selected(tile_position: Vector2i) -> void:
 	selected_tile = tiles[tile_position.y][tile_position.x]
 	selected_tile.set_selected(true)
 	
-	tile_selected.emit(position)
+	tile_selected.emit(tile_position)
+
+func get_tile_at(position: Vector2i):
+	return tiles[position.y][position.x]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

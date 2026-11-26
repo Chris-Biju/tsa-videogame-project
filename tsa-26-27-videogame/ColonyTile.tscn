@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhs7mfl815mne" path="res://icon.svg" id="2_lqvjn"]
 
 [node name="ColonyTile" type="Panel" unique_id=618690360]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 offset_top = 1.0
 offset_right = 40.0
 offset_bottom = 41.0
@@ -32,6 +32,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ClickArea" type="Button" parent="." unique_id=1845421021]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
