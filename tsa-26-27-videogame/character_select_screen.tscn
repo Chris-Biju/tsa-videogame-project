@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://csnsyj1lugyki"]
+
+[ext_resource type="Script" uid="uid://c83ouq1xk4a1" path="res://character_select_screen.gd" id="1_lsbwu"]
+
+[node name="CharacterSelectScreen" type="Control" unique_id=657771406]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lsbwu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=84047626]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 646.0
+color = Color(0.00029224993, 0.21794921, 0.7145304, 1)
+
+[node name="maincontainer" type="VBoxContainer" parent="." unique_id=1409290389]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1050.0
+offset_bottom = 503.0
+scale = Vector2(1.0985175, 1.0873194)
+
+[node name="page title" type="Label" parent="maincontainer" unique_id=1361520245]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.58
+theme_override_font_sizes/font_size = 40
+text = "Choose Your Character"
+
+[node name="cardscontainer" type="HBoxContainer" parent="maincontainer" unique_id=523905077]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="engineercard" type="PanelContainer" parent="maincontainer/cardscontainer" unique_id=1230973623]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="engineercontent" type="VBoxContainer" parent="maincontainer/cardscontainer/engineercard" unique_id=1869878093]
+layout_mode = 2
+
+[node name="portrait" type="ColorRect" parent="maincontainer/cardscontainer/engineercard/engineercontent" unique_id=815450339]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+color = Color(0.18284217, 0.18284217, 0.17753763, 0.972549)
+
+[node name="title" type="Label" parent="maincontainer/cardscontainer/engineercard/engineercontent" unique_id=1155945481]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Engineer"
+
+[node name="button" type="Button" parent="maincontainer/cardscontainer/engineercard/engineercontent" unique_id=1498762947]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SELECT"
+
+[node name="scientistcard" type="PanelContainer" parent="maincontainer/cardscontainer" unique_id=386256407]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="scientistcontent" type="VBoxContainer" parent="maincontainer/cardscontainer/scientistcard" unique_id=1619822389]
+layout_mode = 2
+
+[node name="portrait" type="ColorRect" parent="maincontainer/cardscontainer/scientistcard/scientistcontent" unique_id=1896847273]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+color = Color(0.18284217, 0.18284217, 0.17753763, 0.972549)
+
+[node name="title" type="Label" parent="maincontainer/cardscontainer/scientistcard/scientistcontent" unique_id=1293104932]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Scientist"
+
+[node name="button" type="Button" parent="maincontainer/cardscontainer/scientistcard/scientistcontent" unique_id=1256754483]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SELECT"
+
+[node name="diplomatcard" type="PanelContainer" parent="maincontainer/cardscontainer" unique_id=543869444]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="diplomatcontent" type="VBoxContainer" parent="maincontainer/cardscontainer/diplomatcard" unique_id=701949907]
+layout_mode = 2
+
+[node name="portrait" type="ColorRect" parent="maincontainer/cardscontainer/diplomatcard/diplomatcontent" unique_id=1635972615]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+color = Color(0.18284217, 0.18284217, 0.17753763, 0.972549)
+
+[node name="title" type="Label" parent="maincontainer/cardscontainer/diplomatcard/diplomatcontent" unique_id=1810319805]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Diplomat"
+
+[node name="button" type="Button" parent="maincontainer/cardscontainer/diplomatcard/diplomatcontent" unique_id=1474252442]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SELECT"
+
+[node name="commandercard" type="PanelContainer" parent="maincontainer/cardscontainer" unique_id=1368620742]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="maincontainer/cardscontainer/commandercard" unique_id=534248645]
+layout_mode = 2
+
+[node name="portrait" type="ColorRect" parent="maincontainer/cardscontainer/commandercard/VBoxContainer" unique_id=357764814]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+color = Color(0.18284217, 0.18284217, 0.17753763, 0.972549)
+
+[node name="title" type="Label" parent="maincontainer/cardscontainer/commandercard/VBoxContainer" unique_id=1900980498]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Commander"
+
+[node name="button" type="Button" parent="maincontainer/cardscontainer/commandercard/VBoxContainer" unique_id=2117579245]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SELECT"
+
+[node name="button" type="Button" parent="." unique_id=31433976]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 0
+offset_left = 335.0
+offset_top = 551.0
+offset_right = 835.0
+offset_bottom = 642.0
+theme_override_font_sizes/font_size = 60
+text = "CONFIRM"
